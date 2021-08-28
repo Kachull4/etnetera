@@ -1,0 +1,386 @@
+:root {
+  --swiper-navigation-color: #000;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.6rem;
+  color: #000;
+  background-color: #f2f2f2;
+}
+
+a {
+  color: #e84e0e;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 100rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title {
+  font-weight: 400;
+}
+
+.title--h2 {
+  font-size: 3.6rem;
+}
+
+.main-menu {
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  text-align: right;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  background-color: #fff;
+  padding: 0 5rem;
+  z-index: 10;
+}
+
+.main-menu__list {
+  margin: 0;
+}
+
+.main-menu__item {
+  display: inline;
+}
+
+.main-menu__link {
+  color: #000;
+  text-decoration: none;
+  padding: 2rem 1rem;
+  display: inline-block;
+  position: relative;
+}
+
+.main-menu__link::after {
+  content: "";
+  position: absolute;
+  bottom: 20%;
+  left: 1rem;
+  width: calc(100% - 2rem);
+  height: 0.15rem;
+  background-color: #e84e0e;
+  opacity: 0;
+  transition: opacity 0.8s, transform 0.8s;
+  transform: scale(0);
+  transform-origin: center;
+}
+
+.main-menu__link:hover {
+  color: #e84e0e;
+}
+
+.main-menu__link:hover::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.swiper {
+  width: 100%;
+  z-index: 0;
+}
+
+.swiper-slide {
+  background-image: url(/images/slide.png);
+  background-size: cover;
+  padding: 10rem 0;
+}
+
+.swiper-button-prev {
+  left: 3rem;
+}
+
+.swiper-button-next {
+  right: 3rem;
+}
+
+.swiper__buttons {
+  text-align: right;
+}
+
+.swiper__title {
+  font-size: 4.8rem;
+  font-weight: 400;
+}
+
+.swiper__text {
+  font-size: 2rem;
+  max-width: 35em;
+}
+
+.button {
+  background-color: #fff;
+  border: 1px solid #e84e0e;
+  border-radius: 100em;
+  padding: 0.8rem 8rem;
+}
+
+.header__banner {
+  padding: 1rem 0;
+  color: #fff;
+  background-color: #e84e0e;
+  width: 100%;
+  font-size: 1.5rem;
+}
+
+.header__banner p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.header__banner a {
+  color: #fff;
+}
+
+.banner__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  max-width: 78rem;
+}
+
+.banner__text {
+  margin: 0 10%;
+  text-align: center;
+  flex: 1;
+}
+
+.section {
+  padding: 10rem;
+}
+
+.section--info {
+  background-color: #fff;
+}
+
+.about__img {
+  float: left;
+  margin: 0 2rem 2rem 0;
+}
+
+.about__clear {
+  clear: left;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 2px dashed #e84e0e;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #464646;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #464646 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.partner {
+  list-style-image: url(/checkmark.png);
+}
+
+.partner__item {
+  padding: 1.5rem;
+}
+
+.benefit__item {
+  padding: 1.5rem;
+  list-style: none;
+  counter-increment: li;
+}
+
+.benefit__item::before {
+  content: counter(li) ".";
+  color: #e84e0e;
+  display: inline-block;
+  width: 2rem;
+  margin-left: -2.5rem;
+}
+
+.rectangles {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.article {
+  position: relative;
+  background-color: #fff;
+  text-align: center;
+  width: 30rem;
+  height: 50rem;
+  padding: 4rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+}
+
+.article:nth-child(2) {
+  color: #fff;
+  background-color: #000;
+}
+
+.article__date {
+  left: 10%;
+  bottom: 5%;
+  position: absolute;
+}
+
+.article__tag {
+  right: 10%;
+  bottom: 5%;
+  position: absolute;
+  color: #e84e0e;
+}
+
+.article__cont {
+  margin: 0;
+}
+
+.footer {
+  padding: 2rem 0;
+  background-color: #fff;
+  text-align: center;
+  position: relative;
+}
+
+.footer__text {
+  text-transform: uppercase;
+}
+
+.open-button {
+  background-color: #e84e0e;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  width: 4.4rem;
+  height: 4.4rem;
+  box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 12%;
+  right: 3%;
+  border: 3px solid #fff;
+  z-index: 9;
+  padding: 2rem;
+  max-width: 39rem;
+  background-color: #fff;
+  box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.form-popup::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  right: 10%;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #fff transparent transparent transparent;
+}
+
+.form-container {
+  max-width: 39rem;
+  padding: 1rem;
+  color: #999999;
+  background-color: #fff;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.form-text {
+  text-transform: none;
+  font-size: 1.4rem;
+}
+
+.form-container input[type="text"] {
+  width: 100%;
+  padding: 1.5rem;
+  margin: 0.5rem 0 2.2rem 0;
+  border: 2px solid #999999;
+  background: #fff;
+}
+
+.form-container input[type="text"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.form-container .btn {
+  background-color: #e84e0e;
+  color: white;
+  padding: 1.6rem 2rem;
+  border: none;
+  border-radius: 10rem;
+  cursor: pointer;
+  width: 60%;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover,
+.open-button:hover {
+  opacity: 1;
+}
+/*# sourceMappingURL=style.css.map */
