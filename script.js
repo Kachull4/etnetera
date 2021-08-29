@@ -5,9 +5,26 @@ const swiper = new Swiper(".swiper", {
     prevEl: ".swiper-button-prev",
   },
 });
+
+let visitors = [25, 41, 41, 36, 12, 22, 36, 66, 61, 51, 39, 37, 34, 20, 26, 39, 34, 58, 45, 54, 54, 39, 39, 32, 48, 38, 32, 25, 17];
+document.querySelectorAll(".visitors__bar").forEach(function (element, index) {
+  let value = visitors[index];
+  let percentage = Math.round((value * 100) / 66);
+  element.setAttribute(
+    "style",
+    "width: " + percentage + "%; height: " + percentage + "%;"
+  );
+  element.setAttribute("aria-label",percentage+"%")
+  if(percentage<=50) {
+    element.classList.add("visitors__bar--low")
+  } else if(percentage<65) {
+    element.classList.add("visitors__bar--medium")
+  }
+});
+
 function openForm() {
-  document.getElementById("myForm").style.display = "block";
+  document.body.classList.add("form-open")
 }
 function closeForm() {
-  document.getElementById("myForm").style.display = "none";
+  document.body.classList.remove("form-open")
 }

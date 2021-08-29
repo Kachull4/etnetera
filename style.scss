@@ -27,12 +27,16 @@ a {
   max-width: 100rem;
   margin-left: auto;
   margin-right: auto;
+  padding: 0 3rem;
 }
 .title {
   font-weight: 400;
 
   &--h2 {
     font-size: 3.6rem;
+  }
+  &--h3 {
+    font-size: 2.1rem;
   }
 }
 .main-menu {
@@ -147,8 +151,6 @@ a {
   }
 }
 .section {
-  padding: 10rem;
-
   &--info {
     background-color: #fff;
   }
@@ -160,6 +162,128 @@ a {
   }
   &__clear {
     clear: left;
+  }
+}
+.visitors-container {
+  text-align: center;
+
+  > div {
+    text-align: left;
+    @media (min-width: 481px) {
+      display: inline-block;
+    }
+  }
+}
+.visitors {
+  display: flex;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    padding: 0 3rem;
+  }
+
+  &__group {
+    display: flex;
+
+    @media (min-width: 481px) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &:first-child {
+      margin-right: 1.5rem;
+    }
+  }
+  &__time {
+    font-size: 1.3rem;
+
+    @media (min-width: 481px) {
+      writing-mode: sideways-lr;
+      order: 1;
+      margin-top: 1.7rem;
+    }
+    @media (max-width: 480px) {
+      width: 3em;
+    }
+
+    &--half {
+      visibility: hidden;
+    }
+  }
+  &__count {
+    margin: 0;
+    display: flex;
+    align-items: flex-end;
+
+    @media (max-width: 480px) {
+      flex: 1;
+      margin: 0 0 0 1.7rem;
+    }
+    @media (min-width: 481px) {
+      height: 6.6rem;
+    }
+  }
+  &__bar {
+    display: block;
+    background-color: $primary;
+    border-top-right-radius: 100px;
+
+    @media (max-width: 480px) {
+      border-bottom-right-radius: 100px;
+    }
+    @media (min-width: 481px) {
+      border-top-left-radius: 100px;
+    }
+
+    &--low {
+      opacity: 0.3;
+    }
+    &--medium {
+      opacity: 0.6;
+    }
+
+    @media (max-width: 480px) {
+      height: 1.7rem !important;
+    }
+    @media (min-width: 481px) {
+      width: 1.7rem !important;
+    }
+  }
+  &__legend {
+    list-style: none;
+
+    @media (max-width: 480px) {
+        padding: 0 3rem;
+      }
+
+    &-item {
+      display: inline;
+      font-size: 1.3rem;
+      margin: 0 1.25rem;
+
+      @media (max-width: 480px) {
+        display: block;
+        margin: 0;
+      }
+
+      &::before {
+        content: "";
+        display: inline-block;
+        background-color: $primary;
+        width: 1.6rem;
+        height: 1.6rem;
+        border-radius: 50%;
+        vertical-align: middle;
+        margin: 0 0.5rem 0 0;
+      }
+
+      &--low::before {
+        opacity: 0.3;
+      }
+      &--medium::before {
+        opacity: 0.6;
+      }
+    }
   }
 }
 .tooltip {
@@ -202,7 +326,7 @@ a {
   grid-template-columns: 50% 50%;
 }
 .partner {
-  list-style-image: url(/checkmark.png);
+  list-style-image: url(/images/checkmark.png);
 
   &__item {
     padding: 1.5rem;
@@ -210,29 +334,30 @@ a {
 }
 .benefit {
   &__item {
-    padding: 1.5rem;
+    padding: 2rem;
     list-style: none;
-    counter-increment: li;
+    counter-increment: benefits;
     &::before {
-      content: counter(li) ".";
+      content: counter(benefits) ".";
       color: $primary;
       display: inline-block;
-      width: 2rem;
-      margin-left: -2.5rem;
+      width: 2.5rem;
+      margin-left: -3rem;
     }
   }
 }
-.rectangles {
+.articles {
+  padding: 5rem 0;
   display: grid;
+  gap: 4rem;
   grid-template-columns: 1fr 1fr 1fr;
 }
 .article {
   position: relative;
   background-color: #fff;
   text-align: center;
-  width: 30rem;
-  height: 50rem;
-  padding: 4rem;
+  padding: 2rem 3.5rem 4rem;
+  font-size: 2rem;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
 
   &:nth-child(2) {
@@ -243,8 +368,10 @@ a {
     left: 10%;
     bottom: 5%;
     position: absolute;
+    font-size: 1.3rem;
   }
   &__tag {
+    font-size: 1.3rem;
     right: 10%;
     bottom: 5%;
     position: absolute;
@@ -252,6 +379,10 @@ a {
   }
   &__cont {
     margin: 0;
+  }
+  &__title {
+    font-size: 3.8rem;
+    line-height: 1.2;
   }
 }
 .footer {
@@ -263,38 +394,61 @@ a {
   &__text {
     text-transform: uppercase;
   }
+  &__copyright {
+    font-size: 1.4rem;
+  }
 }
 .open-button {
-  background-color: $primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ea1c0a;
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  opacity: 0.8;
   position: fixed;
-  bottom: 5%;
-  right: 5%;
+  bottom: 5rem;
+  right: 5rem;
   width: 4.4rem;
   height: 4.4rem;
   box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+.form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 8;
+
+  body.form-open & {
+    display: block;
+  }
 }
 .form-popup {
   display: none;
   position: fixed;
-  bottom: 12%;
-  right: 3%;
+  bottom: 11rem;
+  right: 3rem;
   border: 3px solid #fff;
   z-index: 9;
   padding: 2rem;
   max-width: 39rem;
   background-color: #fff;
-  box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.5);
+  filter: drop-shadow(0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.5));
+
+  body.form-open & {
+    display: block;
+  }
 
   &::after {
     content: "";
     position: absolute;
     top: 100%;
-    right: 10%;
-    border-width: 10px;
+    right: 2.5rem;
+    border-width: 15px;
     border-style: solid;
     border-color: #fff transparent transparent transparent;
   }
@@ -311,14 +465,14 @@ a {
   text-transform: none;
   font-size: 1.4rem;
 }
-.form-container input[type="text"] {
+.form-container input {
   width: 100%;
   padding: 1.5rem;
   margin: 0.5rem 0 2.2rem 0;
   border: 2px solid #999999;
   background: #fff;
 }
-.form-container input[type="text"]:focus {
+.form-container input:focus {
   background-color: #ddd;
   outline: none;
 }
@@ -331,14 +485,4 @@ a {
   cursor: pointer;
   width: 60%;
   margin-bottom: 1rem;
-  opacity: 0.8;
-}
-/* Add a red background color to the cancel button */
-.form-container .cancel {
-  background-color: red;
-}
-/* Add some hover effects to buttons */
-.form-container .btn:hover,
-.open-button:hover {
-  opacity: 1;
 }
