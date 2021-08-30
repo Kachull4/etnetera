@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="Etnetera" />
+     <meta
+      property="og:description"
+      content="Etnetera - Přidej se v Etneteře mezi kodéry"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,43 +19,47 @@
       rel="stylesheet"
       href="https://unpkg.com/swiper@7.0.0/swiper-bundle.min.css"
     />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/logo-ico.svg"
+    />
     <link rel="stylesheet" href="style.css" />
-    <title>etnetera</title>
+    <title>Etnetera</title>
   </head>
   <body>
     <nav class="main-menu">
-      <div class="main-menu__container">
-        <a href="/">
-          <img class="main-menu__logo" src="/images/logo.png" alt="Etnetera" />
-        </a>
-        <ul class="main-menu__list">
-          <li class="main-menu__item">
-            <a class="main-menu__link" href="#">Domů</a>
-          </li>
-          <li class="main-menu__item">
-            <a class="main-menu__link" href="#">Kdo jsme</a>
-          </li>
-          <li class="main-menu__item">
-            <a class="main-menu__link" href="#">Co děláme</a>
-          </li>
-          <li class="main-menu__item">
-            <a class="main-menu__link" href="#">Reference</a>
-          </li>
-          <li class="main-menu__item">
-            <a class="main-menu__link" href="#">Práce u nás</a>
-          </li>
-          <li class="main-menu__item">
-            <a class="main-menu__link" href="#">Kontakt</a>
-          </li>
-        </ul>
-        <div class="hamburger">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </div>
+      <a href="/">
+        <img class="main-menu__logo" src="/images/logo.png" alt="Etnetera" />
+      </a>
+      <ul class="main-menu__list">
+        <li class="main-menu__item">
+          <a class="main-menu__link" href="#home">Domů</a>
+        </li>
+        <li class="main-menu__item">
+          <a class="main-menu__link" href="#about">Kdo jsme</a>
+        </li>
+        <li class="main-menu__item">
+          <a class="main-menu__link" href="#work">Co děláme</a>
+        </li>
+        <li class="main-menu__item">
+          <a class="main-menu__link" href="#reference">Reference</a>
+        </li>
+        <li class="main-menu__item">
+          <a class="main-menu__link" href="#career">Práce u nás</a>
+        </li>
+        <li class="main-menu__item">
+          <a class="main-menu__link" href="#contacts">Kontakt</a>
+        </li>
+      </ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
       </div>
     </nav>
-    <header class="header">
+    <header class="header" id="home">
       <div class="swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
@@ -109,7 +118,7 @@
         </div>
       </div>
     </header>
-    <section class="section section--about about">
+    <section class="section section--about about" id="about">
       <div class="container">
         <h2 class="title title--h2">Co jsme zač</h2>
         <img class="about__img" src="/images/building.png" alt="building" />
@@ -150,7 +159,7 @@
           umístili na třech nejvyšších příčkách v soutěži Best Employers ČR.
         </p>
       </div>
-      <div class="visitors-container">
+      <div class="visitors-container" id="work">
         <div>
           <h3 class="title title--h3">Návštěvnost firmy</h3>
           <dl class="visitors">
@@ -353,7 +362,7 @@
         </div>
       </div>
     </section>
-    <section class="section section--job-info">
+    <section class="section section--job-info" id="reference">
       <div class="container">
         <div class="columns">
           <div>
@@ -419,7 +428,7 @@
         </div>
       </div>
     </section>
-    <section class="section section--info info">
+    <section class="section section--info info" id="career">
       <div class="container">
         <div class="articles">
           <article class="article">
@@ -482,7 +491,9 @@
       </button>
       <div onclick="closeForm()" class="form-overlay"></div>
       <div class="form-popup" id="myForm">
-        <h2 class="form-title">Dostávejte články přímo do vaší e-mailové schránky!</h2>
+        <h2 class="form-title">
+          Dostávejte články přímo do vaší e-mailové schránky!
+        </h2>
         <form action="/" class="form-container">
           <label for="email"><b>vaše e-mailová adresa</b></label>
           <input type="email" placeholder="" name="email" required />
@@ -497,7 +508,7 @@
         </form>
       </div>
     </section>
-    <footer class="footer">
+    <footer class="footer" id="contacts">
       <p class="footer__text footer__copyright">
         <a href="https://www.etnetera.cz/">copyright</a>
       </p>
