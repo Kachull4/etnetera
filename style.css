@@ -518,7 +518,8 @@ a {
 
 .columns {
   display: grid;
-  grid-template-columns: 50% 50%;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
 }
 
 @media (max-width: 480px) {
@@ -553,13 +554,7 @@ a {
   padding: 5rem 0;
   display: grid;
   gap: 4rem;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-@media (max-width: 480px) {
-  .articles {
-    grid-template-columns: 100%;
-  }
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
 }
 
 .article {

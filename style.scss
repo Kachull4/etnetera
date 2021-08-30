@@ -437,7 +437,8 @@ a {
 }
 .columns {
   display: grid;
-  grid-template-columns: 50% 50%;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
 
   @include small() {
     grid-template-columns: 100%;
@@ -468,11 +469,7 @@ a {
   padding: 5rem 0;
   display: grid;
   gap: 4rem;
-  grid-template-columns: 1fr 1fr 1fr;
-
-  @include small() {
-    grid-template-columns: 100%;
-  }
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
 }
 .article {
   position: relative;
