@@ -64,7 +64,7 @@ a {
   padding: 0 5rem;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 899px) {
   .main-menu {
     justify-content: flex-end;
     align-items: center;
@@ -80,7 +80,7 @@ a {
   justify-content: flex-end;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 899px) {
   .main-menu__list {
     display: flex;
     justify-content: space-between;
@@ -101,7 +101,7 @@ a {
   display: inline;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 899px) {
   .main-menu__item {
     margin: 0;
   }
@@ -129,7 +129,7 @@ a {
   transform-origin: center;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 899px) {
   .main-menu__link {
     display: block;
     padding: 1.4rem;
@@ -155,7 +155,7 @@ a {
   padding: 1rem;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 899px) {
   .main-menu__logo {
     text-align: center;
     margin: 0;
@@ -167,14 +167,14 @@ a {
   display: none;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 899px) {
   .hamburger {
     display: block;
     margin-left: auto;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 899px) {
   .hamburger.active .bar:nth-child(2) {
     opacity: 0;
   }
@@ -324,7 +324,7 @@ a {
   text-align: left;
 }
 
-@media (min-width: 481px) {
+@media (min-width: 900px) {
   .visitors-container > div {
     display: inline-block;
   }
@@ -345,7 +345,7 @@ a {
   display: flex;
 }
 
-@media (min-width: 481px) {
+@media (min-width: 900px) {
   .visitors__group {
     flex-direction: column;
     align-items: center;
@@ -360,7 +360,7 @@ a {
   font-size: 1.3rem;
 }
 
-@media (min-width: 481px) {
+@media (min-width: 900px) {
   .visitors__time {
     writing-mode: sideways-lr;
     order: 1;
@@ -391,7 +391,7 @@ a {
   }
 }
 
-@media (min-width: 481px) {
+@media (min-width: 900px) {
   .visitors__count {
     height: 6.6rem;
   }
@@ -409,7 +409,7 @@ a {
   }
 }
 
-@media (min-width: 481px) {
+@media (min-width: 900px) {
   .visitors__bar {
     border-top-left-radius: 100px;
   }
@@ -429,7 +429,7 @@ a {
   }
 }
 
-@media (min-width: 481px) {
+@media (min-width: 900px) {
   .visitors__bar {
     width: 1.7rem !important;
   }

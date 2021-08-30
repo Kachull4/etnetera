@@ -4,8 +4,13 @@ $primary: #e84e0e;
     @content;
   }
 }
+@mixin medium() {
+  @media (max-width: 899px) {
+    @content;
+  }
+}
 @mixin large() {
-  @media (min-width: 481px) {
+  @media (min-width: 900px) {
     @content;
   }
 }
@@ -63,7 +68,7 @@ a {
   background-color: #fff;
   padding: 0 5rem;
 
-  @include small() {
+  @include medium() {
     justify-content: flex-end;
     align-items: center;
     height: 5rem;
@@ -75,7 +80,7 @@ a {
     margin: 0;
     justify-content: flex-end;
 
-    @include small() {
+    @include medium() {
       display: flex;
       justify-content: space-between;
       position: absolute;
@@ -93,7 +98,7 @@ a {
   &__item {
     display: inline;
 
-    @include small() {
+    @include medium() {
       margin: 0;
     }
   }
@@ -116,7 +121,7 @@ a {
       transform: scaleX(0);
       transform-origin: center;
     }
-    @include small() {
+    @include medium() {
       display: block;
       padding: 1.4rem;
       font-size: 1.6rem;
@@ -136,7 +141,7 @@ a {
     margin: 0;
     position: absolute;
     padding: 1rem;
-    @include small() {
+    @include medium() {
       text-align: center;
       margin: 0;
       z-index: 1;
@@ -146,12 +151,12 @@ a {
 .hamburger {
   display: none;
 
-  @include small() {
+  @include medium() {
     display: block;
     margin-left: auto;
   }
 }
-@include small() {
+@include medium() {
   .hamburger.active .bar:nth-child(2) {
     opacity: 0;
   }
